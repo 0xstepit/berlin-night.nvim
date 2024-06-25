@@ -5,41 +5,81 @@ local M = {}
 ---@class Palette
 M.default = {
   none = "NONE",
-  bg_dark = "#1f2335",
-  bg = "#24283b",
-  bg_highlight = "#292e42",
-  terminal_black = "#414868",
-  fg = "#c0caf5",
-  fg_dark = "#a9b1d6",
-  fg_gutter = "#3b4261",
-  dark3 = "#545c7e",
-  comment = "#565f89",
-  dark5 = "#737aa2",
-  blue0 = "#3d59a1",
-  blue = "#7aa2f7",
-  cyan = "#7dcfff",
-  blue1 = "#2ac3de",
-  blue2 = "#0db9d7",
-  blue5 = "#89ddff",
-  blue6 = "#b4f9f8",
-  blue7 = "#394b70",
-  magenta = "#bb9af7",
-  magenta2 = "#ff007c",
-  purple = "#9d7cd8",
-  orange = "#ff9e64",
-  yellow = "#e0af68",
-  green = "#9ece6a",
-  green1 = "#73daca",
-  green2 = "#41a6b5",
-  teal = "#1abc9c",
-  red = "#f7768e",
-  red1 = "#db4b4b",
-  git = { change = "#6183bb", add = "#449dab", delete = "#914c54" },
-  gitSigns = {
-    add = "#266d6a",
-    change = "#536c9e",
-    delete = "#b2555b",
-  },
+
+  -- Basic
+  black = "#191919",
+  white = "#F2F2F2",
+
+  -- Base color
+  base = "#1A91E5",
+
+  -- Tint of base
+  base1 = "#1A4CE5",
+  base2 = "#1A6FE5",
+  base3 = "#1AB2E5",
+  base4 = "#1AD4E5",
+
+  -- Shades of base
+  base11 = "#7594F0",
+  base12 = "#75A8F0",
+  base13 = "#75D1F0",
+  base14 = "#75E5F0",
+
+  -- Greys
+  grey1 = "#121B21",
+  grey2 = "#243642",
+  grey3 = "#365063",
+  grey4 = "#476B85",
+  grey5 = "#8BAAC1",
+  grey6 = "#ACC2D2",
+  grey7 = "#CDDBE4",
+  grey8 = "#EEF3F6",
+
+  -- Tint of base math
+  orange11 = "#8A420F",
+  orange = "#E56F1A",
+  orange1 = "#F0A875",
+  orange2 = "#FAE2D1",
+
+  yellow11 = "#8A800F",
+  yellow = "#E5D41A",
+  yellow1 = "#F0E575",
+  yellow2 = "#FAF6D1",
+
+  red11 = "#8A0F1A",
+  red = "#E51A2B",
+  red1 = "#F07580",
+  red2 = "#FAD1D4",
+
+  magenta11 = "#800F8A",
+  magenta = "#D41AE5",
+  magenta1 = "#E575F0",
+  magenta2 = "#F6D1FA",
+
+  -- Additional
+  pink1 = "#FF007C",
+  pink2 = "#FF99CB",
+  pink3 = "#FFCCE5",
+
+  purple11 = "#2C0A5C",
+  purple = "#6F1AE5",
+  purple1 = "#A875F0",
+  purple2 = "#E2D1FA",
+
+  blue11 = "#0F1A8A",
+  blue = "#1A2BE5",
+  blue1 = "#7580F0",
+  blue2 = "#D1D4FA",
+
+  cyan11 = "#0F8A80",
+  cyan = "#1AE5D4",
+  cyan1 = "#75F0E6",
+  cyan2 = "#D1FAF7",
+
+  green11 = "#1A8A0F",
+  green = "#2BE51A",
+  green1 = "#80F075",
+  green2 = "#D4FAD1",
 }
 
 M.night = {
@@ -47,53 +87,6 @@ M.night = {
   bg_dark = "#16161e",
 }
 M.day = M.night
-
-M.moon = function()
-  local ret = {
-    none = "NONE",
-    bg_dark = "#1e2030", --
-    bg = "#222436", --
-    bg_highlight = "#2f334d", --
-    terminal_black = "#444a73", --
-    fg = "#c8d3f5", --
-    fg_dark = "#828bb8", --
-    fg_gutter = "#3b4261",
-    dark3 = "#545c7e",
-    comment = "#7a88cf", --
-    dark5 = "#737aa2",
-    blue0 = "#3e68d7", --
-    blue = "#82aaff", --
-    cyan = "#86e1fc", --
-    blue1 = "#65bcff", --
-    blue2 = "#0db9d7",
-    blue5 = "#89ddff",
-    blue6 = "#b4f9f8", --
-    blue7 = "#394b70",
-    purple = "#fca7ea", --
-    magenta2 = "#ff007c",
-    magenta = "#c099ff", --
-    orange = "#ff966c", --
-    yellow = "#ffc777", --
-    green = "#c3e88d", --
-    green1 = "#4fd6be", --
-    green2 = "#41a6b5",
-    teal = "#4fd6be", --
-    red = "#ff757f", --
-    red1 = "#c53b53", --
-  }
-  ret.comment = util.blend(ret.comment, ret.bg, "bb")
-  ret.git = {
-    change = util.blend(ret.blue, ret.bg, "ee"),
-    add = util.blend(ret.green, ret.bg, "ee"),
-    delete = util.blend(ret.red, ret.bg, "dd"),
-  }
-  ret.gitSigns = {
-    change = util.blend(ret.blue, ret.bg, "66"),
-    add = util.blend(ret.green, ret.bg, "66"),
-    delete = util.blend(ret.red, ret.bg, "aa"),
-  }
-  return ret
-end
 
 ---@return ColorScheme
 function M.setup(opts)
@@ -110,20 +103,69 @@ function M.setup(opts)
   ---@class ColorScheme: Palette
   local colors = vim.tbl_deep_extend("force", vim.deepcopy(M.default), palette)
 
-  util.bg = colors.bg
-  util.day_brightness = config.options.day_brightness
+  -- Customization
+  colors.bg_dark = colors.grey1
+  colors.bg = colors.black
+  colors.bg_highlight = colors.black
+  colors.terminal_black = colors.black
+
+  -- Original
+  colors.fg = colors.white
+  colors.fg_dark = colors.grey4
+  colors.fg_gutter = colors.grey3
+
+  colors.dark3 = colors.grey6
+  colors.dark5 = colors.grey7
+
+  colors.comment = colors.grey4
+
+  colors.blue = colors.base11
+  colors.blue0 = colors.base12
+  colors.blue2 = colors.base13
+  colors.blue5 = colors.base14
+  colors.blue1 = colors.base13
+  colors.blue6 = colors.base2
+  colors.blue7 = colors.base3
+
+  colors.cyan = colors.cyan1
+
+  colors.magenta = colors.purple1
+  colors.magenta2 = colors.magenta11
+
+  colors.purple = colors.purple1
+  colors.orange = colors.orange1
+  colors.yellow = colors.yellow1
+
+  colors.green = colors.cyan1
+  -- colors.green1 = colors.green
+  colors.green2 = colors.green11
+
+  -- Git
+  colors.git = { change = "#6183bb", add = "#449dab", delete = "#914c54" }
+
+  colors.gitSigns = {
+    add = "#80F075",
+    change = "#E5D41A",
+    delete = "#E51A2B",
+  }
 
   colors.diff = {
-    add = util.darken(colors.green2, 0.15),
-    delete = util.darken(colors.red1, 0.15),
-    change = util.darken(colors.blue7, 0.15),
-    text = colors.blue7,
+    add = "#115C0A", -- background of added lines
+    delete = "#5C0A11", -- background of deleted lines
+    change = "#0A115C", -- background of changed lines
+    text = colors.grey3, -- background of changed characters
   }
+
+  colors.teal = colors.base14
+
+  util.bg = colors.bg
+
+  util.day_brightness = config.options.day_brightness
 
   colors.git.ignore = colors.dark3
   colors.black = util.darken(colors.bg, 0.8, "#000000")
   colors.border_highlight = util.darken(colors.blue1, 0.8)
-  colors.border = colors.black
+  colors.border = colors.bg
 
   -- Popups and statusline always get a dark background
   colors.bg_popup = colors.bg_dark
@@ -138,8 +180,8 @@ function M.setup(opts)
     or config.options.styles.floats == "dark" and colors.bg_dark
     or colors.bg
 
-  colors.bg_visual = util.darken(colors.blue0, 0.4)
-  colors.bg_search = colors.blue0
+  colors.bg_visual = colors.grey4
+  colors.bg_search = colors.pink1
   colors.fg_sidebar = colors.fg_dark
   -- colors.fg_float = config.options.styles.floats == "dark" and colors.fg_dark or colors.fg
   colors.fg_float = colors.fg
