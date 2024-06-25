@@ -2,8 +2,11 @@
 
 This is a working progress forked from Tokyo Night theme.
 
+![berlin night](./assets/berlinnight.png) 
 
-Below readme is from
+## TODO
+
+Update doc below
 
 
 A dark and light [Neovim](https://github.com/neovim/neovim) theme written in
