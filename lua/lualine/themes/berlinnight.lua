@@ -10,8 +10,8 @@ berlinnight.normal = {
 }
 
 berlinnight.insert = {
-  a = { bg = colors.green, fg = colors.black },
-  b = { bg = colors.fg_gutter, fg = colors.green },
+  a = { bg = colors.cyan, fg = colors.black },
+  b = { bg = colors.fg_gutter, fg = colors.cyan },
 }
 
 berlinnight.command = {
@@ -20,8 +20,8 @@ berlinnight.command = {
 }
 
 berlinnight.visual = {
-  a = { bg = colors.magenta, fg = colors.black },
-  b = { bg = colors.fg_gutter, fg = colors.magenta },
+  a = { bg = colors.purple, fg = colors.black },
+  b = { bg = colors.fg_gutter, fg = colors.purple },
 }
 
 berlinnight.replace = {

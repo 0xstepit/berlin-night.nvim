@@ -11,10 +11,10 @@ M.default = {
   white = "#F2F2F2",
 
   -- Base color
-  base = "#1A91E5",
+  base = "#1A91E5", -- color theme starting color
+  base1 = "#75BDF0", -- starting color with base theme light
 
   -- Tint of base
-  base1 = "#1A4CE5",
   base2 = "#1A6FE5",
   base3 = "#1AB2E5",
   base4 = "#1AD4E5",
@@ -68,11 +68,11 @@ M.default = {
 
   blue11 = "#0F1A8A",
   blue = "#1A2BE5",
-  blue1 = "#7580F0",
   blue2 = "#D1D4FA",
 
   cyan11 = "#0F8A80",
   cyan = "#1AE5D4",
+  blue1 = "#7580F0",
   cyan1 = "#75F0E6",
   cyan2 = "#D1FAF7",
 
@@ -119,7 +119,6 @@ function M.setup(opts)
 
   colors.comment = colors.grey4
 
-  colors.blue = colors.base11
   colors.blue0 = colors.base12
   colors.blue2 = colors.base13
   colors.blue5 = colors.base14
@@ -127,30 +126,31 @@ function M.setup(opts)
   colors.blue6 = colors.base2
   colors.blue7 = colors.base3
 
-  colors.cyan = colors.cyan1
-
-  colors.magenta = colors.purple1
-  colors.magenta2 = colors.magenta11
-
   colors.purple = colors.purple1
+  colors.red = colors.red1
   colors.orange = colors.orange1
   colors.yellow = colors.yellow1
-
-  colors.green = colors.cyan1
-  -- colors.green1 = colors.green
-  colors.green2 = colors.green11
+  colors.cyan = colors.cyan1
+  colors.green = colors.green1
+  colors.blue = colors.blue1
 
   -- Git
-  colors.git = { change = "#6183bb", add = "#449dab", delete = "#914c54" }
+  colors.git = {
+    add = colors.green,
+    change = colors.yellow,
+    delete = colors.red,
+    ignore = colors.dark3,
+  }
 
   colors.gitSigns = {
-    add = "#80F075",
-    change = "#E5D41A",
-    delete = "#E51A2B",
+    add = colors.green,
+    change = colors.yellow,
+    delete = colors.red,
+    untrcked = colors.grey3,
   }
 
   colors.diff = {
-    add = "#115C0A", -- background of added lines
+    add = colors.green11, -- background of added lines
     delete = "#5C0A11", -- background of deleted lines
     change = "#0A115C", -- background of changed lines
     text = colors.grey3, -- background of changed characters
@@ -158,13 +158,12 @@ function M.setup(opts)
 
   colors.teal = colors.base14
 
+  -- Utils
   util.bg = colors.bg
-
   util.day_brightness = config.options.day_brightness
 
-  colors.git.ignore = colors.dark3
-  colors.black = util.darken(colors.bg, 0.8, "#000000")
-  colors.border_highlight = util.darken(colors.blue1, 0.8)
+  colors.black = colors.bg
+  colors.border_highlight = colors.blue1
   colors.border = colors.bg
 
   -- Popups and statusline always get a dark background
@@ -191,11 +190,6 @@ function M.setup(opts)
   colors.warning = colors.yellow
   colors.info = colors.blue2
   colors.hint = colors.teal
-
-  colors.delta = {
-    add = util.darken(colors.green2, 0.45),
-    delete = util.darken(colors.red1, 0.45),
-  }
 
   config.options.on_colors(colors)
   if opts.transform and config.is_day() then
