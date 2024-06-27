@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build Extras
         run: |
-          nvim -u NONE -E -R --headless --cmd "set rtp^=." --cmd "packloadall" --cmd "lua require('tokyonight.extra').setup()" --cmd qa
+          nvim -u NONE -E -R --headless --cmd "set rtp^=." --cmd "packloadall" --cmd "lua require('berlinnight.extra').setup()" --cmd qa
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
@@ -62,7 +62,7 @@ jobs:
       - name: panvimdoc
         uses: kdheepak/panvimdoc@main
         with:
-          vimdoc: tokyonight.nvim
+          vimdoc: berlinnight.nvim
           version: "Neovim >= 0.8.0"
           demojify: true
           treesitter: true
@@ -85,7 +85,7 @@ jobs:
         id: release
         with:
           release-type: simple
-          package-name: tokyonight.nvim
+          package-name: berlinnight.nvim
       - uses: actions/checkout@v3
       - name: tag stable versions
         if: ${{ steps.release.outputs.release_created }}
