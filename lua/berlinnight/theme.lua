@@ -148,7 +148,7 @@ function M.setup()
     -- Macro         = { }, --    same as Define
     -- PreCondit     = { }, --  preprocessor #if, #else, #endif, etc.
 
-    Type = { fg = c.base14 }, -- (preferred) int, long, char, etc.
+    Type = { fg = c.base2 }, -- (preferred) int, long, char, etc.
     -- StorageClass  = { }, -- static, register, volatile, etc.
     -- Structure     = { }, --  struct, union, enum, etc.
     -- Typedef       = { }, --  A typedef
@@ -555,7 +555,7 @@ function M.setup()
   end
 
   -- Markdown
-  local header_shades = { c.purple1, c.base11, c.base12, c.base13, c.base14 }
+  local header_shades = { c.base, c.purple, c.magenta, c.red, c.blue }
 
   for i, color in ipairs(header_shades) do
     theme.highlights["@markup.heading." .. i .. ".markdown"] = { fg = color, bold = true }

@@ -15,15 +15,9 @@ M.default = {
   base1 = "#75BDF0", -- starting color with base theme light
 
   -- Tint of base
-  base2 = "#1A6FE5",
   base3 = "#1AB2E5",
-  base4 = "#1AD4E5",
 
-  -- Shades of base
-  base11 = "#7594F0",
-  base12 = "#75A8F0",
-  base13 = "#75D1F0",
-  base14 = "#75E5F0",
+  base2 = "#7594F0",
 
   -- Greys
   grey1 = "#121B21",
@@ -36,50 +30,29 @@ M.default = {
   grey8 = "#EEF3F6",
 
   -- Tint of base math
-  orange11 = "#8A420F",
   orange = "#E56F1A",
+
   orange1 = "#F0A875",
-  orange2 = "#FAE2D1",
-
-  yellow11 = "#8A800F",
-  yellow = "#E5D41A",
   yellow1 = "#F0E575",
-  yellow2 = "#FAF6D1",
-
-  red11 = "#8A0F1A",
-  red = "#E51A2B",
   red1 = "#F07580",
-  red2 = "#FAD1D4",
-
-  magenta11 = "#800F8A",
-  magenta = "#D41AE5",
   magenta1 = "#E575F0",
-  magenta2 = "#F6D1FA",
+  purple1 = "#A875F0",
+  blue1 = "#7580F0",
+  cyan1 = "#75F0E6",
+  green1 = "#80F075",
 
   -- Additional
   pink1 = "#FF007C",
   pink2 = "#FF99CB",
-  pink3 = "#FFCCE5",
 
-  purple11 = "#2C0A5C",
-  purple = "#6F1AE5",
-  purple1 = "#A875F0",
-  purple2 = "#E2D1FA",
-
-  blue11 = "#0F1A8A",
   blue = "#1A2BE5",
-  blue2 = "#D1D4FA",
 
   cyan11 = "#0F8A80",
   cyan = "#1AE5D4",
-  blue1 = "#7580F0",
-  cyan1 = "#75F0E6",
-  cyan2 = "#D1FAF7",
 
+  red11 = "#8A0F1A",
   green11 = "#1A8A0F",
-  green = "#2BE51A",
-  green1 = "#80F075",
-  green2 = "#D4FAD1",
+  blue11 = "#0F1A8A",
 }
 
 M.night = {
@@ -119,20 +92,21 @@ function M.setup(opts)
 
   colors.comment = colors.grey4
 
-  colors.blue0 = colors.base12
-  colors.blue2 = colors.base13
-  colors.blue5 = colors.base14
-  colors.blue1 = colors.base13
+  colors.blue2 = colors.base1
+  colors.blue5 = colors.base2
+  colors.blue1 = colors.cyan1
   colors.blue6 = colors.base2
   colors.blue7 = colors.base3
+  colors.teal = colors.base2
 
-  colors.purple = colors.purple1
-  colors.red = colors.red1
   colors.orange = colors.orange1
   colors.yellow = colors.yellow1
+  colors.red = colors.red1
+  colors.magenta = colors.magenta1
+  colors.purple = colors.purple1
+  colors.blue = colors.blue1
   colors.cyan = colors.cyan1
   colors.green = colors.green1
-  colors.blue = colors.blue1
 
   -- Git
   colors.git = {
@@ -155,8 +129,6 @@ function M.setup(opts)
     change = "#0A115C", -- background of changed lines
     text = colors.grey3, -- background of changed characters
   }
-
-  colors.teal = colors.base14
 
   -- Utils
   util.bg = colors.bg
