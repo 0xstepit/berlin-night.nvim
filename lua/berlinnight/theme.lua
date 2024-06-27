@@ -40,7 +40,7 @@ function M.setup()
     lCursor = { fg = c.bg, bg = c.fg }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM = { fg = c.bg, bg = c.fg }, -- like Cursor, but used when in IME mode |CursorIM|
 
-    Directory = { fg = c.base3 }, -- directory names (and other special names in listings)
+    Directory = { fg = c.base12 }, -- directory names (and other special names in listings)
 
     DiffAdd = { bg = c.diff.add }, -- diff mode: Added line |diff.txt|
     DiffChange = { bg = c.diff.change }, -- diff mode: Changed line |diff.txt|
@@ -54,7 +54,7 @@ function M.setup()
     VertSplit = { fg = c.border, bold = true }, -- the column separating vertically split windows
     WinSeparator = { link = "VertSplit" }, -- the column separating vertically split windows
 
-    Folded = { fg = c.base2, bg = c.fg_gutter }, -- line used for closed folds
+    Folded = { fg = c.base12, bg = c.fg_gutter }, -- line used for closed folds
 
     FoldColumn = { bg = options.transparent and c.none or c.bg, fg = c.comment }, -- 'foldcolumn'
     SignColumn = { bg = options.transparent and c.none or c.bg, fg = c.fg_gutter }, -- column where |signs| are displayed
@@ -72,7 +72,7 @@ function M.setup()
 
     ModeMsg = { fg = c.fg_dark, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
     MsgArea = { fg = c.fg_dark }, -- Area for messages and cmdline
-    MoreMsg = { fg = c.blue }, -- |more-prompt|
+    MoreMsg = { fg = c.cyan }, -- |more-prompt|
 
     NonText = { fg = c.fg_gutter }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 
@@ -89,7 +89,7 @@ function M.setup()
     PmenuSbar = { bg = util.lighten(c.bg_popup, 0.95) }, -- Popup menu: scrollbar.
     PmenuThumb = { bg = c.fg_gutter }, -- Popup menu: Thumb of the scrollbar.
 
-    Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
+    Question = { fg = c.cyan }, -- |hit-enter| prompt and yes/no questions
 
     QuickFixLine = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     SpecialKey = { fg = c.pink1 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
@@ -104,7 +104,7 @@ function M.setup()
 
     TabLine = { bg = c.bg_statusline, fg = c.fg_gutter }, -- tab pages line, not active tab page label
     TabLineFill = { bg = c.black }, -- tab pages line, where there are no labels
-    TabLineSel = { fg = c.black, bg = c.blue }, -- tab pages line, active tab page label
+    TabLineSel = { fg = c.black, bg = c.cyan }, -- tab pages line, active tab page label
 
     Title = { fg = c.blue, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
 
@@ -126,7 +126,7 @@ function M.setup()
 
     Constant = { fg = c.yellow }, -- (preferred) any constant
     String = { fg = c.grey7 }, --   a string constant: "this is a string"
-    Character = { fg = c.blue1 }, --  a character constant: 'c', '\n'
+    Character = { fg = c.cyan }, --  a character constant: 'c', '\n'
     -- Number        = { }, --   a number constant: 234, 0xff
     -- Boolean       = { }, --  a boolean constant: TRUE, false
     -- Float         = { }, --    a floating point constant: 2.3e10
@@ -138,7 +138,7 @@ function M.setup()
     -- Conditional   = { }, --  if, then, else, endif, switch, etc.
     -- Repeat        = { }, --   for, do, while, etc.
     -- Label         = { }, --    case, default, etc.
-    Operator = { fg = c.blue5 }, -- "sizeof", "+", "*", etc.
+    Operator = { fg = c.magenta }, -- "sizeof", "+", "*", etc.
     Keyword = { fg = c.pink1, style = options.styles.keywords }, --  any other keyword
     -- Exception     = { }, --  try, catch, throw
 
@@ -148,12 +148,12 @@ function M.setup()
     -- Macro         = { }, --    same as Define
     -- PreCondit     = { }, --  preprocessor #if, #else, #endif, etc.
 
-    Type = { fg = c.base2 }, -- (preferred) int, long, char, etc.
+    Type = { fg = c.base12 }, -- (preferred) int, long, char, etc.
     -- StorageClass  = { }, -- static, register, volatile, etc.
     -- Structure     = { }, --  struct, union, enum, etc.
     -- Typedef       = { }, --  A typedef
 
-    Special = { fg = c.blue1 }, -- (preferred) any special symbol
+    Special = { fg = c.cyan }, -- (preferred) any special symbol
     -- SpecialChar   = { }, --  special character in a constant
     -- Tag           = { }, --    you can use CTRL-] on this
     Delimiter = { link = "Special" }, --  character that needs attention
@@ -171,23 +171,23 @@ function M.setup()
     Todo = { bg = c.yellow, fg = c.bg }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     qfLineNr = { fg = c.dark5 },
-    qfFileName = { fg = c.blue },
+    qfFileName = { fg = c.cyan },
 
     htmlH1 = { fg = c.purple, bold = true },
     htmlH2 = { fg = c.blue, bold = true },
 
     mkdCodeDelimiter = { bg = c.terminal_black, fg = c.fg },
-    mkdCodeStart = { fg = c.teal, bold = true },
-    mkdCodeEnd = { fg = c.teal, bold = true },
+    mkdCodeStart = { fg = c.blue14, bold = true },
+    mkdCodeEnd = { fg = c.blue14, bold = true },
 
     markdownHeadingDelimiter = { fg = c.orange, bold = true },
-    markdownCode = { fg = c.teal },
-    markdownCodeBlock = { fg = c.teal },
+    markdownCode = { fg = c.blue14 },
+    markdownCodeBlock = { fg = c.blue14 },
     markdownH1 = { fg = c.purple, bold = true },
     markdownH2 = { fg = c.blue, bold = true },
     markdownLinkText = { fg = c.blue, underline = true },
 
-    ["helpCommand"] = { bg = c.terminal_black, fg = c.blue },
+    ["helpCommand"] = { bg = c.terminal_black, fg = c.cyan },
 
     debugPC = { bg = c.bg_sidebar }, -- used for highlighting the current line in terminal-debug
     debugBreakpoint = { bg = util.darken(c.info, 0.1), fg = c.info }, -- used for breakpoint colors in terminal-debug
@@ -219,7 +219,7 @@ function M.setup()
 
     LspSignatureActiveParameter = { bg = util.darken(c.bg_visual, 0.4), bold = true },
     LspCodeLens = { fg = c.comment },
-    LspInlayHint = { bg = util.darken(c.blue7, 0.1), fg = c.dark3 },
+    LspInlayHint = { bg = c.base11, fg = c.dark3 },
 
     LspInfoBorder = { fg = c.border_highlight, bg = c.bg_float },
 
@@ -289,18 +289,18 @@ function M.setup()
     --- Misc
     -- TODO:
     -- ["@comment.documentation"] = { },
-    ["@operator"] = { fg = c.blue5 }, -- For any operator: `+`, but also `->` and `*` in C.
+    ["@operator"] = { fg = c.green }, -- For any operator: `+`, but also `->` and `*` in C.
 
     --- Punctuation
-    ["@punctuation.delimiter"] = { fg = c.blue5 }, -- For delimiters ie: `.`
+    ["@punctuation.delimiter"] = { fg = c.base13 }, -- For delimiters ie: `.`
     ["@punctuation.bracket"] = { fg = c.fg_dark }, -- For brackets and parens.
-    ["@punctuation.special"] = { fg = c.blue5 }, -- For special symbols (e.g. `{}` in string interpolation)
-    ["@markup.list"] = { fg = c.blue5 }, -- For special punctutation that does not fall in the catagories before.
+    ["@punctuation.special"] = { fg = c.base12 }, -- For special symbols (e.g. `{}` in string interpolation)
+    ["@markup.list"] = { fg = c.base13 }, -- For special punctutation that does not fall in the catagories before.
     ["@markup.list.markdown"] = { fg = c.orange, bold = true },
 
     --- Literals
     ["@string.documentation"] = { fg = c.yellow },
-    ["@string.regexp"] = { fg = c.blue6 }, -- For regexes.
+    ["@string.regexp"] = { fg = c.base12 }, -- For regexes.
     ["@string.escape"] = { fg = c.purple }, -- For escape characters within a string.
 
     --- Functions
@@ -312,13 +312,13 @@ function M.setup()
     ["@keyword"] = { fg = c.purple, style = options.styles.keywords }, -- For keywords that don't fall in previous categories.
     ["@keyword.function"] = { fg = c.purple, style = options.styles.functions }, -- For keywords used to define a fuction.
 
-    ["@label"] = { fg = c.blue }, -- For labels: `label:` in C and `:label:` in Lua.
+    ["@label"] = { fg = c.cyan }, -- For labels: `label:` in C and `:label:` in Lua.
 
     --- Types
-    ["@type.builtin"] = { fg = c.blue1 },
+    ["@type.builtin"] = { fg = c.cyan },
     -- the two below should be equal because the last substitute former
-    ["@variable.member"] = { fg = c.blue }, -- For fields.
-    ["@property"] = { fg = c.blue },
+    ["@variable.member"] = { fg = c.cyan }, -- For fields.
+    ["@property"] = { fg = c.cyan },
 
     --- Identifiers
     ["@variable"] = { fg = c.fg, style = options.styles.variables }, -- Any variable name that does not have another highlight.
@@ -326,11 +326,11 @@ function M.setup()
     ["@module.builtin"] = { fg = c.red1 }, -- Variable names that are defined by the languages, like `this` or `self`.
 
     --- Text
-    -- ["@markup.raw.markdown"] = { fg = c.blue },
-    ["@markup.raw.markdown_inline"] = { bg = c.terminal_black, fg = c.blue },
-    ["@markup.link"] = { fg = c.teal },
+    -- ["@markup.raw.markdown"] = { fg = c.cyan},
+    ["@markup.raw.markdown_inline"] = { bg = c.terminal_black, fg = c.cyan },
+    ["@markup.link"] = { fg = c.blue14 },
 
-    ["@markup.list.unchecked"] = { fg = c.blue }, -- For brackets and parens.
+    ["@markup.list.unchecked"] = { fg = c.cyan }, -- For brackets and parens.
     ["@markup.list.checked"] = { fg = c.green1 }, -- For brackets and parens.
 
     ["@diff.plus"] = { link = "DiffAdd" },
@@ -341,7 +341,7 @@ function M.setup()
 
     -- tsx
     ["@tag.tsx"] = { fg = c.red },
-    ["@constructor.tsx"] = { fg = c.blue1 },
+    ["@constructor.tsx"] = { fg = c.cyan },
     ["@tag.delimiter.tsx"] = { fg = util.darken(c.blue, 0.7) },
 
     -- LSP Semantic Token Groups
@@ -355,7 +355,7 @@ function M.setup()
     ["@lsp.type.escapeSequence"] = { link = "@string.escape" },
     ["@lsp.type.formatSpecifier"] = { link = "@markup.list" },
     ["@lsp.type.generic"] = { link = "@variable" },
-    ["@lsp.type.interface"] = { fg = util.lighten(c.blue1, 0.7) },
+    ["@lsp.type.interface"] = { fg = util.lighten(c.cyan, 0.7) },
     ["@lsp.type.keyword"] = { link = "@keyword" },
     ["@lsp.type.lifetime"] = { link = "@keyword.storage" },
     ["@lsp.type.namespace"] = { link = "@module" },
@@ -380,8 +380,8 @@ function M.setup()
     ["@lsp.typemod.operator.injected"] = { link = "@operator" },
     ["@lsp.typemod.string.injected"] = { link = "@string" },
     ["@lsp.typemod.struct.defaultLibrary"] = { link = "@type.builtin" },
-    ["@lsp.typemod.type.defaultLibrary"] = { fg = util.darken(c.blue1, 0.8) },
-    ["@lsp.typemod.typeAlias.defaultLibrary"] = { fg = util.darken(c.blue1, 0.8) },
+    ["@lsp.typemod.type.defaultLibrary"] = { fg = util.darken(c.cyan, 0.8) },
+    ["@lsp.typemod.typeAlias.defaultLibrary"] = { fg = util.darken(c.cyan, 0.8) },
     ["@lsp.typemod.variable.callable"] = { link = "@function" },
     ["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
     ["@lsp.typemod.variable.injected"] = { link = "@variable" },
@@ -405,7 +405,7 @@ function M.setup()
     diffChanged = { fg = c.git.change },
     diffOldFile = { fg = c.yellow },
     diffNewFile = { fg = c.orange },
-    diffFile = { fg = c.blue },
+    diffFile = { fg = c.cyan },
     diffLine = { fg = c.comment },
     diffIndexLine = { fg = c.purple },
 
@@ -423,7 +423,7 @@ function M.setup()
 
     -- WhichKey [DONE]
     WhichKey = { fg = c.orange },
-    WhichKeyGroup = { fg = c.blue },
+    WhichKeyGroup = { fg = c.cyan },
     WhichKeyDesc = { fg = c.purple },
     WhichKeySeperator = { fg = c.comment },
     WhichKeyFloat = { bg = c.bg_sidebar },
@@ -446,16 +446,12 @@ function M.setup()
 
     CmpItemAbbr = { fg = c.fg, bg = c.none },
     CmpItemAbbrDeprecated = { fg = c.fg_gutter, bg = c.none, strikethrough = true },
-    CmpItemAbbrMatch = { fg = c.blue1, bg = c.none },
-    CmpItemAbbrMatchFuzzy = { fg = c.blue1, bg = c.none },
+    CmpItemAbbrMatch = { fg = c.cyan, bg = c.none },
+    CmpItemAbbrMatchFuzzy = { fg = c.cyan, bg = c.none },
 
     CmpItemMenu = { fg = c.comment, bg = c.none },
 
     CmpItemKindDefault = { fg = c.fg_dark, bg = c.none },
-
-    CmpItemKindCodeium = { fg = c.teal, bg = c.none },
-    CmpItemKindCopilot = { fg = c.teal, bg = c.none },
-    CmpItemKindTabNine = { fg = c.teal, bg = c.none },
 
     -- Lazy
     LazyProgressDone = { bold = true, fg = c.magenta1 },
@@ -492,19 +488,19 @@ function M.setup()
     -- NeotestPassed = { fg = c.green },
     -- NeotestRunning = { fg = c.yellow },
     -- NeotestFailed = { fg = c.red },
-    -- NeotestSkipped = { fg = c.blue },
+    -- NeotestSkipped = { fg = c.cyan},
     -- NeotestTest = { fg = c.fg_sidebar },
     -- NeotestNamespace = { fg = c.green2 },
     -- NeotestFocused = { fg = c.yellow },
-    -- NeotestFile = { fg = c.teal },
-    -- NeotestDir = { fg = c.blue },
-    -- NeotestBorder = { fg = c.blue },
+    -- NeotestFile = { fg = c.blue14 },
+    -- NeotestDir = { fg = c.cyan},
+    -- NeotestBorder = { fg = c.cyan},
     -- NeotestIndent = { fg = c.fg_sidebar },
     -- NeotestExpandMarker = { fg = c.fg_sidebar },
     -- NeotestAdapterName = { fg = c.purple, bold = true },
-    -- NeotestWinSelect = { fg = c.blue },
-    -- NeotestMarked = { fg = c.blue },
-    -- NeotestTarget = { fg = c.blue },
+    -- NeotestWinSelect = { fg = c.cyan},
+    -- NeotestMarked = { fg = c.cyan},
+    -- NeotestTarget = { fg = c.cyan},
   }
 
   -- lsp symbol kind and completion kind highlights
@@ -555,7 +551,7 @@ function M.setup()
   end
 
   -- Markdown
-  local header_shades = { c.base, c.purple, c.magenta, c.red, c.blue }
+  local header_shades = { c.base, c.purple, c.magenta, c.red, c.cyan }
 
   for i, color in ipairs(header_shades) do
     theme.highlights["@markup.heading." .. i .. ".markdown"] = { fg = color, bold = true }

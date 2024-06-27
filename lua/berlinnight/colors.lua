@@ -14,10 +14,10 @@ M.default = {
   base = "#1A91E5", -- color theme starting color
   base1 = "#75BDF0", -- starting color with base theme light
 
-  -- Tint of base
-  base3 = "#1AB2E5",
-
-  base2 = "#7594F0",
+  base11 = "#75E5F0",
+  base12 = "#75D1F0",
+  base13 = "#75A8F0",
+  base14 = "#7594F0",
 
   -- Greys
   grey1 = "#121B21",
@@ -28,9 +28,6 @@ M.default = {
   grey6 = "#ACC2D2",
   grey7 = "#CDDBE4",
   grey8 = "#EEF3F6",
-
-  -- Tint of base math
-  orange = "#E56F1A",
 
   orange1 = "#F0A875",
   yellow1 = "#F0E575",
@@ -45,21 +42,11 @@ M.default = {
   pink1 = "#FF007C",
   pink2 = "#FF99CB",
 
-  blue = "#1A2BE5",
-
   cyan11 = "#0F8A80",
-  cyan = "#1AE5D4",
-
   red11 = "#8A0F1A",
   green11 = "#1A8A0F",
   blue11 = "#0F1A8A",
 }
-
-M.night = {
-  bg = "#1a1b26",
-  bg_dark = "#16161e",
-}
-M.day = M.night
 
 ---@return ColorScheme
 function M.setup(opts)
@@ -92,13 +79,6 @@ function M.setup(opts)
 
   colors.comment = colors.grey4
 
-  colors.blue2 = colors.base1
-  colors.blue5 = colors.base2
-  colors.blue1 = colors.cyan1
-  colors.blue6 = colors.base2
-  colors.blue7 = colors.base3
-  colors.teal = colors.base2
-
   colors.orange = colors.orange1
   colors.yellow = colors.yellow1
   colors.red = colors.red1
@@ -125,8 +105,8 @@ function M.setup(opts)
 
   colors.diff = {
     add = colors.green11, -- background of added lines
-    delete = "#5C0A11", -- background of deleted lines
-    change = "#0A115C", -- background of changed lines
+    delete = colors.red11, -- background of deleted lines
+    change = colors.blue11, -- background of changed lines
     text = colors.grey3, -- background of changed characters
   }
 
@@ -157,11 +137,11 @@ function M.setup(opts)
   -- colors.fg_float = config.options.styles.floats == "dark" and colors.fg_dark or colors.fg
   colors.fg_float = colors.fg
 
-  colors.error = colors.red1
+  colors.error = colors.red
   colors.todo = colors.blue
   colors.warning = colors.yellow
-  colors.info = colors.blue2
-  colors.hint = colors.teal
+  colors.info = colors.base14
+  colors.hint = colors.base12
 
   config.options.on_colors(colors)
   if opts.transform and config.is_day() then
