@@ -53,23 +53,23 @@ function M.setup(opts)
   opts = opts or {}
   local config = require("berlinnight.config")
 
-  local style = config.is_day() and config.options.light_style or config.options.style
+  local style = config.options.style
   local palette = M[style] or {}
+  -- Initialize the palette for the colorscheme.
   if type(palette) == "function" then
     palette = palette()
   end
 
   -- Color Palette
+  -- Override the default colorscheme with the palette.
   ---@class ColorScheme: Palette
   local colors = vim.tbl_deep_extend("force", vim.deepcopy(M.default), palette)
 
-  -- Customization
   colors.bg_dark = colors.grey1
   colors.bg = colors.black
   colors.bg_highlight = colors.black
   colors.terminal_black = colors.black
 
-  -- Original
   colors.fg = colors.white
   colors.fg_dark = colors.grey4
   colors.fg_gutter = colors.grey3
@@ -131,8 +131,9 @@ function M.setup(opts)
     or config.options.styles.floats == "dark" and colors.bg_dark
     or colors.bg
 
-  colors.bg_visual = colors.grey4
-  colors.bg_search = colors.pink1
+  colors.bg_visual = colors.pink1
+  colors.fg_visual = colors.black
+
   colors.fg_sidebar = colors.fg_dark
   -- colors.fg_float = config.options.styles.floats == "dark" and colors.fg_dark or colors.fg
   colors.fg_float = colors.fg
@@ -144,9 +145,6 @@ function M.setup(opts)
   colors.hint = colors.base12
 
   config.options.on_colors(colors)
-  if opts.transform and config.is_day() then
-    util.invert_colors(colors)
-  end
 
   return colors
 end

@@ -62,7 +62,7 @@ function M.setup()
     SignColumnSB = { link = "SignColumn" }, -- column where |signs| are displayed
 
     Search = { bg = c.grey5, fg = c.black }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-    IncSearch = { bg = c.pink1, fg = c.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    IncSearch = { bg = c.bg_visual, fg = c.fg_visual }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     CurSearch = { link = "IncSearch" },
     Substitute = { link = "IncSearch" }, -- |:substitute| replacement text highlighting
 
@@ -109,7 +109,7 @@ function M.setup()
 
     Title = { fg = c.blue, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
 
-    Visual = { bg = c.bg_visual }, -- Visual mode selection
+    Visual = { bg = c.bg_visual, fg = c.black }, -- Visual mode selection
     VisualNOS = { bg = c.bg_visual }, -- Visual mode selection when vim is "Not Owning the Selection".
 
     WarningMsg = { fg = c.warning }, -- warning messages
@@ -191,7 +191,7 @@ function M.setup()
     ["helpCommand"] = { bg = c.terminal_black, fg = c.cyan },
 
     debugPC = { bg = c.bg_sidebar }, -- used for highlighting the current line in terminal-debug
-    debugBreakpoint = { bg = util.darken(c.info, 0.1), fg = c.info }, -- used for breakpoint colors in terminal-debug
+    debugBreakpoint = { bg = c.info, fg = c.info }, -- used for breakpoint colors in terminal-debug
 
     dosIniLabel = { link = "@property" },
 
@@ -599,11 +599,6 @@ function M.setup()
   end
 
   options.on_highlights(theme.highlights, theme.colors)
-
-  if config.is_day() then
-    util.invert_colors(theme.colors)
-    util.invert_highlights(theme.highlights)
-  end
 
   return theme
 end
