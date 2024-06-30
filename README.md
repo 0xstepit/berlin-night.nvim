@@ -119,3 +119,7 @@ How to add a new extra template:
 ## References
 
 This colorscheme is inspired by the amazing [Tokyo Night](https://github.com/folke/tokyonight.nvim) plugin.
+
+## Disclaimer
+
+This project is still a WIP so minor bug can be found. In that case, please, add an issue!

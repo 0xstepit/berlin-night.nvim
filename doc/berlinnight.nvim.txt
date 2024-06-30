@@ -29,8 +29,7 @@ SUPPORTED PLUGINS            *berlinnight.nvim-berlin-night-supported-plugins*
 - Enhances terminal colors.
 - Introduces a darker background option for sidebar-like windows.
 - Supports all major plugins.
-- Provides Berlin Night <https://github.com/0xstepit/berlinnight.nvim>
-    |berlinnight.nvim-extras| for numerous other applications.
+- Provides Berlin Night <https://github.com/0xstepit/berlin-night.nvim> extras for numerous other applications.
 
 
 EXTRAS ~
