@@ -48,6 +48,11 @@ M.default = {
   blue11 = "#0F1A8A",
 }
 
+M.mitte = {
+  bg = "#1a1b26",
+  bg_dark = "#16161e",
+}
+
 ---@return ColorScheme
 function M.setup(opts)
   opts = opts or {}
