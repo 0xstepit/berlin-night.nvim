@@ -1,0 +1,41 @@
+# BerlinNight Alacritty Colors
+# Default colors
+[colors.primary]
+background = '#191919'
+foreground = '#F2F2F2'
+
+#[colors.cursor]
+#cursor = '#F2F2F2'
+#text = '#191919'
+
+# Normal colors
+[colors.normal]
+black = '#191919'
+red = '#F07580'
+green = '#80F075'
+yellow = '#F0E575'
+blue = '#7580F0'
+magenta = '#E575F0'
+cyan = '#75F0E6'
+white = '#476B85'
+
+# Bright colors
+[colors.bright]
+black = '#191919'
+red = '#F07580'
+green = '#80F075'
+yellow = '#F0E575'
+blue = '#7580F0'
+magenta = '#E575F0'
+cyan = '#75F0E6'
+white = '#F2F2F2'
+
+# Indexed Colors
+[[colors.indexed_colors]]
+index = 16
+color = '#F0A875'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#F07580'
+
