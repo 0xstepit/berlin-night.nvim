@@ -9,8 +9,8 @@ end
 
 M.template = [[
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
---color=fg:${grey5},bg:${bg},hl:${orange},border:{grey7} \
---color=fg+:${fg},bg+:${bg_highlight},hl+:${orange} \
+--color=fg:${grey5},hl:${yellow},border:${grey7} \
+--color=fg+:${fg},hl+:${yellow} \
 --color=info:${blue},prompt:${cyan},pointer:${pink1} \
 --color=marker:${green},spinner:${pink1},header:${pink1}"
 ]]
