@@ -11,6 +11,7 @@ Table of Contents                         *berlinnight.nvim-table-of-contents*
   - Configuration                |berlinnight.nvim-berlin-night-configuration|
   - Contributing                  |berlinnight.nvim-berlin-night-contributing|
   - References                      |berlinnight.nvim-berlin-night-references|
+  - Disclaimer                      |berlinnight.nvim-berlin-night-disclaimer|
 2. Links                                              |berlinnight.nvim-links|
 
 ==============================================================================
@@ -156,6 +157,12 @@ REFERENCES                          *berlinnight.nvim-berlin-night-references*
 
 This colorscheme is inspired by the amazing Tokyo Night
 <https://github.com/folke/tokyonight.nvim> plugin.
+
+
+DISCLAIMER                          *berlinnight.nvim-berlin-night-disclaimer*
+
+This project is still a WIP so minor bug can be found. In that case, please,
+add an issue!
 
 ==============================================================================
 2. Links                                              *berlinnight.nvim-links*
