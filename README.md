@@ -12,8 +12,7 @@ It features a retro aesthetic with a distinct emphasis on greys, characteristic 
 - Enhances terminal colors.
 - Introduces a darker background option for sidebar-like windows.
 - Supports all major plugins.
-- Provides [Berlin Night](https://github.com/0xstepit/berlin-night.nvim)
-  [extras](#-extras) for numerous other applications.
+- Provides [Berlin Night](https://github.com/0xstepit/berlin-night.nvim) extras for numerous other applications.
 
 ### Extras
 
