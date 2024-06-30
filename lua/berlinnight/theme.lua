@@ -27,7 +27,8 @@ function M.setup()
 
   theme.highlights = {
     Foo = { bg = c.pink1, fg = c.fg },
-
+    NoiceCmdlinePopupBorder = { fg = c.pink1 },
+    NoiceCmdlineIconCmdline = { link = "NoiceCmdlinePopupBorder" },
     Comment = { fg = c.comment, style = options.styles.comments }, -- any comment
 
     ColorColumn = { bg = c.bg_highlight }, -- used for the columns set with 'colorcolumn'
@@ -60,7 +61,7 @@ function M.setup()
     SignColumn = { bg = options.transparent and c.none or c.bg, fg = c.fg_gutter }, -- column where |signs| are displayed
     SignColumnSB = { link = "SignColumn" }, -- column where |signs| are displayed
 
-    Search = { bg = c.pink2, fg = c.black }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+    Search = { bg = c.grey5, fg = c.black }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     IncSearch = { bg = c.pink1, fg = c.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     CurSearch = { link = "IncSearch" },
     Substitute = { link = "IncSearch" }, -- |:substitute| replacement text highlighting
@@ -422,12 +423,13 @@ function M.setup()
     TelescopePromptTitle = { fg = c.pink1, bg = c.bg_float },
 
     -- WhichKey [DONE]
-    WhichKey = { fg = c.orange },
+    WhichKey = { fg = c.yellow },
     WhichKeyGroup = { fg = c.cyan },
     WhichKeyDesc = { fg = c.purple },
-    WhichKeySeperator = { fg = c.comment },
-    WhichKeyFloat = { bg = c.bg_sidebar },
     WhichKeyValue = { fg = c.dark5 },
+    WhichKeyFloat = { bg = c.grey1 },
+    WhichKeySeperator = { fg = c.pink1 },
+    WhichKeyBorder = { bg = c.pink1, fg = c.pink1 },
 
     -- NeoVim
     healthError = { fg = c.error },
@@ -438,6 +440,8 @@ function M.setup()
     NoiceCompletionItemKindDefault = { fg = c.pink1, bg = c.none },
     TreesitterContext = { bg = c.fg_gutter },
     Hlargs = { fg = c.yellow },
+    NoicePopup = { fg = c.pink1, bg = c.none },
+    NoiceMini = { fg = c.pink1, bg = c.none },
 
     -- Cmp
     CmpDocumentation = { fg = c.fg, bg = c.bg_float },
